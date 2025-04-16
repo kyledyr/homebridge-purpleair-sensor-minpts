@@ -35,8 +35,9 @@ export class PurpleAirPlatformAccessory {
       .onGet(this.getAirQuality.bind(this));
     this.service.getCharacteristic(this.platform.Characteristic.PM2_5Density)
       .onGet(this.getPM2_5Density.bind(this));
-    this.service.getCharacteristic(this.platform.Characteristic.VOCDensity)
+    /**this.service.getCharacteristic(this.platform.Characteristic.VOCDensity)
       .onGet(this.getVOCDensity.bind(this));
+    */  
     if (this.accessory.context.sensor.humidity) {
       this.service.getCharacteristic(this.platform.Characteristic.CurrentRelativeHumidity)
         .onGet(this.getCurrentRelativeHumidity.bind(this));
@@ -130,7 +131,7 @@ export class PurpleAirPlatformAccessory {
     return 0;
   }
 
-  getVOCDensity() {
+ /** getVOCDensity() {
     this.debugLog('getVOCDensity');
 
     const lastReading = this.accessory.context.lastReading;
@@ -140,6 +141,7 @@ export class PurpleAirPlatformAccessory {
 
     return 0;
   }
+*/
 
   getCurrentRelativeHumidity() {
     this.debugLog('getCurrentRelativeHumidity');
@@ -211,7 +213,9 @@ export class PurpleAirPlatformAccessory {
     });
 
     try {
-      let fields = 'voc,pm2.5,pm2.5_cf_1,pm2.5_10minute,pm2.5_30minute,pm2.5_60minute';
+      let fields = 'pm2.5_10minute';
+      /**voc,pm2.5,pm2.5_cf_1,   ,pm2.5_30minute,pm2.5_60minute'
+      */
       if (sensorConfig.humidity) {
         fields += ',humidity';
       }
@@ -290,7 +294,7 @@ export class PurpleAirPlatformAccessory {
         this.service.updateCharacteristic(this.platform.Characteristic.PM2_5Density, lastReading.pm25);
       }
 
-      if (lastReading.voc) {
+      /**if (lastReading.voc) {
         this.service.updateCharacteristic(this.platform.Characteristic.VOCDensity, lastReading.voc);
       }
 
@@ -308,6 +312,7 @@ export class PurpleAirPlatformAccessory {
         this.temperature.updateCharacteristic(this.platform.Characteristic.StatusActive, true);
         this.temperature.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, lastReading.temperature);
       }
+      */
     }
   }
 }
