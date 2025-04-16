@@ -1,7 +1,7 @@
 {
   "private": false,
-  "displayName": "Homebridge PurpleAir Sensor",
-  "name": "homebridge-purpleair-sensor",
+  "displayName": "Homebridge PurpleAir Sensor Min Pts",
+  "name": "homebridge-purpleair-sensor-minpts",
   "version": "3.1.0",
   "description": "Monitor air quality using PurpleAir.",
   "license": "Apache-2.0",
