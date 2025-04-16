@@ -2,15 +2,15 @@
   "private": false,
   "displayName": "Homebridge PurpleAir Sensor Min Pts",
   "name": "homebridge-purpleair-sensor-minpts",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Monitor air quality using PurpleAir.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jmkk/homebridge-purpleair-sensor.git"
+    "url": "git://github.com/kyledyr/homebridge-purpleair-sensor-minpts.git"
   },
   "bugs": {
-    "url": "https://github.com/jmkk/homebridge-purpleair-sensor/issues"
+    "url": "https://github.com/kyledyr/homebridge-purpleair-sensor-minpts/issues"
   },
   "engines": {
     "node": "^18 || ^20 || ^22",
